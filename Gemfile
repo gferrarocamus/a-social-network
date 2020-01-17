@@ -42,8 +42,6 @@ gem 'bootstrap-will_paginate'
 gem 'carrierwave'
 gem 'faker'
 gem 'will_paginate'
-# gem "font-awesome-rails"
-# gem 'material_icons'
 
 gem 'mini_magick'
 # Use ActiveStorage variant
