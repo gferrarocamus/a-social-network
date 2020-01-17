@@ -1,3 +1,20 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.full-height {
+  min-height: 100vh;
+}
+
+.full-height-col {
+  min-height: calc(100vh - 68px);
+}
+
+.connect,
+.login-form {
+  padding: 50px;
+}
+
+.nav-container.login {
+  padding: 0 50px;
+}

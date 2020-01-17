@@ -11,34 +11,7 @@
       rel="stylesheet">
   </head>
 
-  <body class='white-background'>
-    <div class="nav-container">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg px-0">
-          <div class="navbar-brand">
-            <%= link_to 'A Social Network', root_path %>
-          </div>        
-
-          <% if user_signed_in? %>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="material-icons">menu</i>
-            </button>
-          <% end %>
-          
-          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <div class="navbar-nav">
-              <% if user_signed_in? %>
-              <%= link_to current_user.name, user_path(current_user) %>
-              <%= link_to 'Find Friends', users_path %>
-              <%= link_to 'New Post', new_post_path %>
-              <%= link_to "Notifications (#{requests_count})", requests_path %>
-              <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-              <% end %>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>  
+  <body class='white-background'> 
     <% if controller_path === "users/sessions" %>
       <%= render "shared/login" %>
     <% else %>
