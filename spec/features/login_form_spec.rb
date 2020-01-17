@@ -9,7 +9,7 @@ RSpec.feature 'Login', type: :feature do
     visit '/login'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_button 'Log in'
+    click_button 'Log In'
     expect(page).to have_text('Signed in successfully.')
   end
 
@@ -17,7 +17,7 @@ RSpec.feature 'Login', type: :feature do
     visit '/login'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: ''
-    click_button 'Log in'
+    click_button 'Log In'
     expect(page).to have_text('Invalid Email or password.')
   end
 

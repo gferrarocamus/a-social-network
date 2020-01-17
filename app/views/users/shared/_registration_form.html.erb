@@ -11,10 +11,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %>
+    <div class="d-flex">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+        <em>&nbsp;(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
+    </div>
     <%= f.password_field :password, autocomplete: "new-password", class: 'w-100' %>    
     <% if yield(:button_text) == 'Update' %> 
       <small class='text-muted'><i>(leave blank if you don't want to change it)</i></small>
@@ -36,6 +38,6 @@
   <br>
 
   <div class="actions">
-    <%= f.submit yield(:button_text), class: "btn button btn-success" %>
+    <%= f.submit yield(:button_text), class: "btn button blue-button btn-block" %>
   </div>
 <% end %>

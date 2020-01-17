@@ -1,0 +1,12 @@
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <div class="col-12 col-md-6 d-none d-md-block gray-background p-0">
+      <%= image_tag "connection.svg", class: "img-fluid connect" %>
+    </div>
+    <div class="col-10 mx-auto col-md-5 login-form">
+      <%= render "shared/flash" %>
+      
+      <%= yield %>
+    </div>
+  </div>  
+</div>

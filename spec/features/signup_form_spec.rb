@@ -11,7 +11,7 @@ RSpec.feature 'Signup form', type: :feature do
     fill_in 'Email', with: 'example999@email.com'
     fill_in 'Password', with: '123456'
     fill_in 'Password confirmation', with: '123456'
-    click_button 'Sign up'
+    click_button 'Sign Up'
     expect(page).to have_text('Welcome! You have signed up successfully.')
   end
 
@@ -21,7 +21,7 @@ RSpec.feature 'Signup form', type: :feature do
     fill_in 'Email', with: 'example999@email.com'
     fill_in 'Password', with: '123456'
     fill_in 'Password confirmation', with: '123456'
-    click_button 'Sign up'
+    click_button 'Sign Up'
     expect(page).to have_text("Name can't be blank")
   end
 end

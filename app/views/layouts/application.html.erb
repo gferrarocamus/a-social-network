@@ -11,12 +11,12 @@
       rel="stylesheet">
   </head>
 
-  <body class='gray-background'>
+  <body class='white-background'>
     <div class="nav-container">
       <div class="container">
         <nav class="navbar navbar-expand-lg px-0">
           <div class="navbar-brand">
-            <%= link_to 'Social Network', root_path %>
+            <%= link_to 'A Social Network', root_path %>
           </div>        
 
           <% if user_signed_in? %>
@@ -29,7 +29,7 @@
             <div class="navbar-nav">
               <% if user_signed_in? %>
               <%= link_to current_user.name, user_path(current_user) %>
-              <%= link_to 'Find friends', users_path %>
+              <%= link_to 'Find Friends', users_path %>
               <%= link_to 'New Post', new_post_path %>
               <%= link_to "Notifications (#{requests_count})", requests_path %>
               <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
@@ -37,20 +37,12 @@
             </div>
           </div>
         </nav>
-      </div><!-- div container ends -->
+      </div>
     </div>  
-    
-    <div class="container">
-      <div class="row my-5">
-        <div class="col-12 col-md-10 col-lg-6 mx-auto">
-
-          <% flash.each do |key, value| %>
-            <%= content_tag :div, value, class: "flash #{key}" %>
-          <% end %>
-          
-          <%= yield %>
-        </div>
-      </div>  
-    </div>
+    <% if controller_path === "users/sessions" %>
+      <%= render "shared/login" %>
+    <% else %>
+      <%= render "shared/content" %>
+    <% end %>
   </body>
 </html>

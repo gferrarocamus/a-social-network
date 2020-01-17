@@ -9,7 +9,7 @@ RSpec.feature 'Navbar', type: :feature do
 
   scenario 'displays links for users not signed in' do
     visit root_path
-    expect(page).to have_link('Social Network')
+    expect(page).to have_link('A Social Network')
     expect(page).not_to have_link('Logout')
   end
 
