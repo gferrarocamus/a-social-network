@@ -1,4 +1,4 @@
-<% provide(:title, 'All users') %>
+<% provide(:title, 'All Users') %>
 
 <div class="bg-white p-4 rounded">
   <h2>All users</h2>
@@ -13,7 +13,7 @@
         <% if user != current_user %>
           <%= render partial: 'shared/user', locals: {user: user} %>
         <% else %>
-          <%= link_to 'View you profile', user_path(user), class: 'btn button gray-button' %>
+          <%= link_to 'View you profile', user_path(user), class: 'btn btn-sm button blue-button' %>
         <% end %>
       </div>
     </div>

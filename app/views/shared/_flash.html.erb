@@ -1,4 +1,4 @@
-<% alert_keys = { alert: 'danger', notice: 'primary'} %>
+<% alert_keys = { alert: 'danger', notice: 'primary', success: 'success'} %>
 
 <% flash.each do |key, value| %>
   <%= content_tag :div, value, class: "flash alert alert-#{alert_keys[key.to_sym]}" %>

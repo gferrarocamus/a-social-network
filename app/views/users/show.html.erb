@@ -9,7 +9,7 @@
     <%= @user.email %>
     <% if @user == current_user %>
       <br>
-      <small><%= link_to 'Edit profile', edit_user_registration_path%></small>
+      <small><%= link_to 'Edit profile', edit_user_registration_path %></small>
     <% else %>
       <%= render partial: 'shared/user', locals: {user: @user} %>
     <% end %>

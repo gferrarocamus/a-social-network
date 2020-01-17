@@ -1,9 +1,9 @@
 <% provide(:title, 'Sign Up') %>
 <% provide(:button_text, 'Sign Up') %>
 
-<%= render "users/shared/error_messages", resource: resource %>
+<div class="centered registration">
+  <%= render "users/shared/error_messages", resource: resource %>
   
-<div class="centered">
   <h2>Sign Up</h2>
 
   <%= render 'users/shared/registration_form' %>

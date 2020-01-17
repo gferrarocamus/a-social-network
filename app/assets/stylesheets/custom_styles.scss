@@ -1,48 +1,89 @@
+html,
+body {
+  color: $jet;
+}
+
+.main a {
+  color: $light-blue;
+}
+
+.main a:hover {
+  text-decoration: none;
+  color: $blue;
+}
+
+.white-background {
+  background: $white;
+}
+
+.silver-background {
+  background: $silver;
+}
+
 .gray-background {
-  background: $background-gray;
+  background: $platinum;
 }
 
 .centered {
   margin: 0 auto;
 }
 
+.semi-bold {
+  font-weight: 500;
+}
+
 .bold {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .button {
-  min-width: 100px;
+  min-width: 200px;
+}
+
+.button.btn-sm {
+  min-width: 50px;
 }
 
 .gray-button {
-  background: $button-gray;
-  border: 1px solid darkgray;
+  background: $silver;
 }
 
 .gray-button:hover {
-  background: $gray-hover;
-  //#dddfe2;
+  background: $jet;
+  color: $white;
 }
 
 .blue-button {
-  background: $network-blue !important;
-  color: white !important;
+  background: $light-blue;
+  color: $white !important;
 }
 
 .blue-button:hover {
-  background: #9cb4d8 !important;
+  background: $blue;
 }
 
-.flash,
+.green-button {
+  background: $green;
+  color: $white !important;
+}
+
+.green-button:hover {
+  background: $teal-green;
+}
+
+.red-hover:hover {
+  background: $red;
+}
+
 #error_explanation {
-  margin-top: -($spacer * 1.5);
-  margin-bottom: 1rem;
-  padding: 10px;
-  color: white;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  background: rgba(190, 75, 73, 0.8);
-  border: solid 1px $alert-red;
+//   color: #721c24;
+//   background-color: #f8d7da;
+//   border-color: #f5c6cb;
+//   position: relative;
+//   padding: 0.75rem 1.25rem;
+//   margin-bottom: 1rem;
+//   border: 1px solid transparent;
+//   border-radius: 0.25rem;
 
   h2 {
     font-size: $font-size-base * 1.25;
@@ -50,13 +91,13 @@
 }
 
 .notice {
-  background: rgba(23, 162, 184, 0.8);
-  border: 1px solid $info;
+  background: $emerald;
+  border: 1px solid $mountain-meadow;
 }
 
 .success {
-  background: rgba(65, 167, 69, 0.8);
-  border: 1px solid $success;
+  background: $green;
+  border: 1px solid $teal-green;
 }
 
 .gravatar img {
@@ -64,12 +105,37 @@
 }
 
 .field {
-  margin-bottom: $spacer * .5;
+  margin-bottom: $spacer * 0.5;
 }
 
 .field .field_with_errors:first-child::after {
-  color: $alert-red;
-  display: inline-block;
-  content: "*";
+  color: $red;
+  content: '*';
   margin-left: 2px;
+}
+
+.registration {
+  padding: 0 50px;
+}
+
+.connect,
+.login-form {
+  padding: 50px;
+}
+
+.nav-container.login {
+  padding: 0 50px;
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+.full-height-col {
+  min-height: calc(100vh - 68px);
+}
+
+.d-flex-center {
+  align-items: center;
+  justify-content: center;
 }

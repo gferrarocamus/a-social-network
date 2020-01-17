@@ -1,16 +1,18 @@
-@import "vars";
-
 .nav-container {
-  background: $network-blue;
-  color: white;
+  background: $light-blue;
+  color: $white;
+
+  .navbar-brand {
+    font-size: 28px;
+  }
 
   a,
   .material-icons {
-    color: white;
+    color: $white;
   }
 
   a:hover {
-    color: rgba(255, 255, 255, 0.5);
+    color: $platinum;
     text-decoration: none;
   }
 
