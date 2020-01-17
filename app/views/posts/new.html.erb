@@ -3,12 +3,12 @@
 <h2>New Post</h2>
 
 <%= form_for(@post, remote: true) do |f| %>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content, class: 'w-100 rounded', rows: 8, autofocus: true %>
+  <div class="field form-group">
+    <%= f.label :content, for: "inputContent" %><br />
+    <%= f.text_area :content, placeholder: 'Share something...', class: 'w-100 form-control', id: "inputContent", rows: 8, autofocus: true %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Post", class: 'btn button blue-button' %>
+    <%= f.submit "Post", class: 'btn button blue-button mt-3 mb-1' %>
   </div>
 <% end %>

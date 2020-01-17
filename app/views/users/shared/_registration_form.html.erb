@@ -1,43 +1,43 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'w-100' %>
+  <div class="field form-group">
+    <%= f.label :name, for: "inputName" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'w-100 form-control', id: "inputName" %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email, autocomplete: "email", class: 'w-100' %>
+  <div class="field form-group">
+    <%= f.label :email, for: "inputEmail" %>
+    <%= f.email_field :email, autocomplete: "email", class: 'w-100 form-control', id: "inputEmail" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <div class="d-flex">
-      <%= f.label :password %>
+      <%= f.label :password, for: "inputPassword" %>
       <% if @minimum_password_length %>
         <em>&nbsp;(<%= @minimum_password_length %> characters minimum)</em>
       <% end %>
     </div>
-    <%= f.password_field :password, autocomplete: "new-password", class: 'w-100' %>    
+    <%= f.password_field :password, autocomplete: "new-password", class: 'w-100 form-control', id: "inputPassword" %>    
     <% if yield(:button_text) == 'Update' %> 
-      <small class='text-muted'><i>(leave blank if you don't want to change it)</i></small>
+      <small class='text-muted'><i>Leave blank if you don't want to change it.</i></small>
     <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'w-100' %>
+  <div class="field form-group">
+    <%= f.label :password_confirmation, for: "inputPasswordConfirmation" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'w-100 form-control', id: "inputPasswordConfirmation" %>
   </div>
 
   <% if yield(:button_text) == 'Update' %>
-    <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "current-password", class: 'w-100' %>
+    <div class="field form-group">
+      <%= f.label :current_password, for: "inputCurrentPassword" %>
+       <i></i><br />
+      <%= f.password_field :current_password, autocomplete: "current-password", class: 'w-100 form-control', id: "inputCurrentPassword" %>
+      <small class='text-muted'><i>We need your current password to confirm your changes.</i></small>
   </div>
   <% end %>
 
-  <br>
-
   <div class="actions">
-    <%= f.submit yield(:button_text), class: "btn button blue-button btn-block" %>
+    <%= f.submit yield(:button_text), class: "btn button blue-button btn-block mt-3 mb-1" %>
   </div>
 <% end %>
