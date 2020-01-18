@@ -13,13 +13,19 @@
     <p class="p-3 my-3 rounded"><%= post.content %></p>
   </div>
 
-  <div class="card-body">
-    <% if (like = like(post.id)) %>
-      <%= link_to 'Unlike', {controller: "likes", action: 'destroy', id: like}, method: :delete, remote: true %>
-    <% else %>
-      <%= link_to 'Like', {controller: 'likes', action: 'create', id: post}, method: :post, remote: true %>
-    <% end %>
-  | <%= pluralize((post.likes.length || 0), 'like')%>
+  <div class="card-body pt-3">
+    <div class="likes d-flex align-items-center">
+      <span>
+        <% if (like = like(post.id)) %>
+          <%= link_to '<i class="material-icons like liked"> thumb_up </i>'.html_safe, {controller: "likes", action: 'destroy', id: like}, method: :delete, remote: true %>
+        <% else %>
+          <%= link_to '<i class="material-icons like"> thumb_up </i>'.html_safe, {controller: 'likes', action: 'create', id: post}, method: :post, remote: true %>
+        <% end %>
+      </span>
+      <span>
+        <%= pluralize((post.likes.length || 0), 'like')%>
+      </span>
+    </div>
   
     <div class="mt-3">
       <%= render partial: 'shared/comment', locals: {post: post} %>
