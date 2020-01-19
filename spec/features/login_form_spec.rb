@@ -24,7 +24,7 @@ RSpec.feature 'Login', type: :feature do
   scenario 'should take user back to login page after logout' do
     login_as(user)
     visit '/'
-    click_link 'Logout'
+    click_link 'Log Out'
     expect(page).to have_current_path(new_user_session_path)
   end
 end
