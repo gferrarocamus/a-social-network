@@ -1,13 +1,15 @@
 <% provide(:title, 'New Post') %>
 
-<h2>New Post</h2>
+<div class="p-relative h-100">
+  <%= form_for(@post, remote: true) do |f| %>
+    <div class="field form-group">
+      <%= f.text_area :content, placeholder: "What's on your mind?", class: 'w-100 form-control', rows: 8, autofocus: true %>
+    </div>
 
-<%= form_for(@post, remote: true) do |f| %>
-  <div class="field form-group mt-4">
-    <%= f.text_area :content, placeholder: 'Share something...', class: 'w-100 form-control', rows: 8, autofocus: true %>
-  </div>
+    <div class="actions">
+      <%= f.submit "Post", class: 'btn button blue-button mt-3 mb-1' %>
+    </div>
+  <% end %>
 
-  <div class="actions">
-    <%= f.submit "Post", class: 'btn button blue-button mt-3 mb-1' %>
-  </div>
-<% end %>
+  <%= image_tag "social_life.svg", class: 'img-fluid p-absolute', id: 'new-post-img' %>
+</div>

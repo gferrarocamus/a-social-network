@@ -14,7 +14,7 @@
       <% if user_signed_in? %>
       <%= link_to "New Post <i class='material-icons'> add_box </i>".html_safe, new_post_path, class: 'border-pipe main-link d-flex align-items-center' %>
       <%= link_to "Find Friends <i class='material-icons'> people_alt </i>".html_safe, users_path, class: 'border-pipe main-link d-flex align-items-center' %>
-      <%= link_to "Notifications <i class='material-icons'> person_add </i> <span class='badge badge-light ml-1'>#{requests_count}</span>".html_safe, requests_path, class: "border-pipe main-link d-flex align-items-center" %>
+      <%= link_to "Notifications <i class='material-icons'> person_add </i> <span class='badge badge-light ml-1'>#{ requests_count unless requests_count == 0 }</span>".html_safe, requests_path, class: "border-pipe main-link d-flex align-items-center" %>
       <div class="dropdown align-items-center main-link">
         <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <%= current_user.name %>

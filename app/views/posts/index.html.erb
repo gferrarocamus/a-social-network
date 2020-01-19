@@ -1,3 +1,13 @@
-<% @posts.each do |post| %>
-  <%= render partial: 'shared/post', locals: {post: post} %>
+<% if @posts.count.zero? %>
+  <div class="text-center">
+    <%= image_tag "post_online.svg", class: 'img-fluid px-1 py-5 p-md-5', id: 'feed-img' %>
+    <h4>There's nothing to show (yet!)</h4>
+    <%= link_to "Find Friends", users_path, class: 'btn button blue-button mt-2' %>
+    <br />
+    <%= link_to "Share Something", new_post_path, class: 'btn button blue-button mt-2' %>
+  </div>
+<% else %>
+  <% @posts.each do |post| %>
+    <%= render partial: 'shared/post', locals: {post: post} %>
+  <% end %>
 <% end %>

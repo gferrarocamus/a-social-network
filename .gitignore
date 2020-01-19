@@ -34,4 +34,4 @@
 /spring/*.pid
 /config/local_env.yml
 .DS_Store
-/app/assets/images
+/app/assets/images/unused

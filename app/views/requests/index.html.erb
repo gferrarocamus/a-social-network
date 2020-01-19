@@ -1,7 +1,13 @@
 <% provide(:title, 'Notifications') %>
 
 <div class="rounded bg-white p-4">
-  <% if !@requests.empty? %>
+  <% if @requests.count.zero? %>
+    <div class="text-center">
+      <%= image_tag "social_update.svg", class: 'img-fluid px-1 py-5 p-md-5', id: 'no-requests-img' %>
+      <h4>You have no pending friend requests</h4>
+      <%= link_to "Find Friends", users_path, class: 'btn button blue-button mt-2' %>
+    </div>
+  <% else %>
     <h2>Pending Requests</h2>
 
     <% @requests.each do |r| %>
@@ -16,7 +22,5 @@
         </div>
       </div>
     <% end %>
-  <% else %>
-    <h4>No pending friend requests</h4>
   <% end %>
 </div>

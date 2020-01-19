@@ -15,7 +15,15 @@
     <% end %>
   </div>
 </div>
-  
-<% @posts.each do |post| %>
-  <%= render partial: 'shared/post', locals: {post: post} %>
+
+<% if @posts.count > 1 %>
+  <% @posts.each do |post| %>
+    <%= render partial: 'shared/post', locals: {post: post} %>
+  <% end %>
+<% elsif @user == current_user %>
+  <div class="text-center">
+    <%= image_tag "no_data.svg", class: 'img-fluid px-1 py-5 p-md-5', id: 'no-data-img' %>
+    <h4>You have no posts</h4>
+    <%= link_to "Share Something", new_post_path, class: 'btn button blue-button mt-2' %>
+  </div>
 <% end %>
