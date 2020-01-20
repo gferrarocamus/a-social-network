@@ -8,6 +8,8 @@
 
     <div class="actions">
       <%= f.submit "Post", class: 'btn button blue-button mt-3 mb-1' %>
+      <%= f.file_field :picture, accept: 'image/jpg,image/jpeg,image/gif,image/png', class: 'form-control-file my-1' %>
+      <small class="p-1 d-none" id="error-explanation">Maximum file size is 1MB. Please choose a smaller file.</small>
     </div>
   <% end %>
 

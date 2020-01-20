@@ -87,8 +87,8 @@ input:disabled {
   background: $red;
 }
 
-#error_explanation {
-
+#error_explanation,
+.flash.alert {
   h2 {
     font-size: $font-size-base * 1.25;
   }
@@ -114,8 +114,16 @@ input:disabled {
   background-color: $blue;
 }
 
-.gravatar.small img.facebook {
+.gravatar.medium img.facebook {
   width: 80px;
+}
+
+.gravatar.small img.facebook {
+  width: 60px;
+}
+
+.gravatar.tiny img.facebook {
+  width: 40px;
 }
 
 .field {
@@ -212,6 +220,10 @@ small .material-icons {
 
   textarea {
     background-color: rgba(255, 255, 255, 0.85);
+  }
+  
+  #error-explanation {
+    color: $red;
   }
 }
 
