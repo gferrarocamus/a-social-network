@@ -1,8 +1,7 @@
-Rails:
-  Enabled: true
+require: rubocop-rails
 
 # Commonly used screens these days easily fit more than 80 characters.
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
 
 # Too short methods lead to extraction of single-use methods, which can make
