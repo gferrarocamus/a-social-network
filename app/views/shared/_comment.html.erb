@@ -2,7 +2,7 @@
   <%= form_for(@comment, remote: true) do |f| %>
     <%= hidden_field_tag 'comment[post_id]', post.id %>
     <div class="field form-group">
-      <%= f.text_area :content, placeholder: 'Write a comment...', class: 'w-100 form-control', id: "inputCurrentPassword" %>
+      <%= f.text_area :content, placeholder: 'Write a comment...', class: 'w-100 form-control' %>
     </div>
     <div class="actions">
       <%= f.submit "Comment", class: 'btn button blue-button d-block mt-3 mb-4' %>

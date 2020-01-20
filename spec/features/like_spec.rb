@@ -13,10 +13,11 @@ RSpec.feature 'Like button', type: :feature do
   scenario 'should allow liking/unliking posts' do
     login_as(@user)
     visit root_path
-    click_link 'Like'
+    click_link 'thumb_up'
     expect(page).to have_text('1 like')
-    expect(page).not_to have_button('Like')
-    click_link 'Unlike'
+    expect(page).to have_css('i.material-icons.like.liked')
+    click_link 'thumb_up'
     expect(page).to have_text('0 likes')
+    expect(page).not_to have_css('i.material-icons.like.liked')
   end
 end

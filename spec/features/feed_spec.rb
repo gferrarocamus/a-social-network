@@ -34,7 +34,7 @@ RSpec.feature 'Post index page/feed', type: :feature do
     login_as(@user)
     visit user_path(@friend)
     expect(page).to have_button('Comment')
-    expect(page).to have_link('Unlike')
+    expect(page).to have_link('thumb_up')
   end
 
   it 'should display posts by self and friends and comments/likes on them' do

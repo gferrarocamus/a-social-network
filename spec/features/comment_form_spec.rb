@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.feature 'Login form', type: :feature do
+RSpec.feature 'Comment form', type: :feature do
   let(:user) { create(:user) }
 
   describe 'for commenting on a post' do
@@ -18,13 +18,14 @@ RSpec.feature 'Login form', type: :feature do
       fill_in 'comment_content', with: 'New comment'
       click_button 'Comment'
       expect(page).to have_text('New comment')
+      expect(page).not_to have_text('Could not publish comment')
     end
 
     scenario 'unsuccessfully without content' do
       visit user_path(@friend)
       fill_in 'comment_content', with: ''
       click_button 'Comment'
-      expect(page).not_to have_text('Could not publish comment.')
+      expect(page).to have_text('Could not publish comment')
     end
   end
 end

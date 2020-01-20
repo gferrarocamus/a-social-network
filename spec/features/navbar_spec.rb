@@ -19,7 +19,7 @@ RSpec.feature 'Navbar', type: :feature do
     expect(page).to have_link('Social Network')
     expect(page).to have_link(@user.name)
     expect(page).to have_link('Find Friends')
-    expect(page).to have_link('Notifications (0)')
+    expect(page).to have_link('Notifications person_add')
     expect(page).to have_link('Log Out')
   end
 end

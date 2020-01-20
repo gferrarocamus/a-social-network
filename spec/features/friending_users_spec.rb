@@ -19,11 +19,11 @@ RSpec.feature 'Friending users', type: :feature do
     logout(@user)
     login_as(@friend)
     visit root_path
-    expect(page).to have_text('Notifications (1)')
+    expect(page).to have_text('Notifications person_add 1')
     visit requests_path
     click_button 'Accept request'
     expect(page).not_to have_button('Accept request')
-    expect(page).to have_text('Notifications (0)')
+    expect(page).to have_text('Notifications person_add')
     visit user_path(@user)
     expect(page).to have_button('Unfriend')
     click_button 'Unfriend'
