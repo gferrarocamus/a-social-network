@@ -12,7 +12,7 @@
 
     <% @requests.each do |r| %>
       <div class="d-flex mt-5">
-        <div class="gravatar">
+        <div class="gravatar small">
           <%= gravatar_for(r.sender, options = {size: 80}) %>
         </div>
         <div class="ml-4">

@@ -23,7 +23,7 @@ class PostsController < ApplicationController
       flash[:success] = 'Post created successfully'
       redirect_to @post
     else
-      flash[:alert] = 'Content should not be empty'
+      flash[:alert] = format_errors(@post.errors)
       redirect_back(fallback_location: new_post_path)
     end
   end
@@ -31,6 +31,14 @@ class PostsController < ApplicationController
   private
 
   def posts_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :picture)
+  end
+
+  def format_errors(errors)
+    alert = "<h2>Could not create post:</h2><ul class='mb-0'>"
+    errors.full_messages.each do |m|
+      alert += "<li>#{m}</li>"
+    end
+    alert += "</ul>"
   end
 end

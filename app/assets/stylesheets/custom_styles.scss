@@ -12,6 +12,10 @@ body {
   color: $blue;
 }
 
+input:disabled {
+  cursor: not-allowed;
+}
+
 .white-background {
   background: $white;
 }
@@ -83,8 +87,8 @@ body {
   background: $red;
 }
 
-#error_explanation {
-
+#error_explanation,
+.flash.alert {
   h2 {
     font-size: $font-size-base * 1.25;
   }
@@ -102,6 +106,24 @@ body {
 
 .gravatar img {
   border-radius: 50%;
+}
+
+.gravatar img.facebook {
+  width: 100px;
+  height: auto;
+  background-color: $blue;
+}
+
+.gravatar.medium img.facebook {
+  width: 80px;
+}
+
+.gravatar.small img.facebook {
+  width: 60px;
+}
+
+.gravatar.tiny img.facebook {
+  width: 40px;
 }
 
 .field {
@@ -138,6 +160,12 @@ body {
 .d-flex-center {
   align-items: center;
   justify-content: center;
+}
+
+small .material-icons {
+  font-size: inherit;
+  font-size: 80%;
+    font-weight: 400;
 }
 
 .material-icons.like {
@@ -192,6 +220,10 @@ body {
 
   textarea {
     background-color: rgba(255, 255, 255, 0.85);
+  }
+  
+  #error-explanation {
+    color: $red;
   }
 }
 
