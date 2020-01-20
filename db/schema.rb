@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 2019_05_13_160437) do
     t.datetime "remember_created_at"
     t.string "provider"
     t.string "uid"
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

@@ -108,6 +108,16 @@ input:disabled {
   border-radius: 50%;
 }
 
+.gravatar img.facebook {
+  width: 100px;
+  height: auto;
+  background-color: $blue;
+}
+
+.gravatar.small img.facebook {
+  width: 80px;
+}
+
 .field {
   margin-bottom: $spacer * 0.5;
 }

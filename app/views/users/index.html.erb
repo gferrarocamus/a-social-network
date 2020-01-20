@@ -5,7 +5,7 @@
     <h2>All Users</h2>
     <% @users.each do |user| %>
       <div class="d-flex mt-5">
-        <div class="gravatar">
+        <div class="gravatar small">
           <%= gravatar_for(user, options = {size: 80}) %>
         </div>
         <div class="ml-4">

@@ -24,10 +24,12 @@ module UsersHelper
   end
 
   def gravatar_for(user, options = { size: 100 })
+    return image_tag("#{user.avatar}?type=normal", alt: user.name, class: user.provider) if user.avatar.present?
+
     size = options[:size]
     gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}&d=mp"
-    image_tag(gravatar_url, alt: user.name, class: 'gravatar')
+    image_tag(gravatar_url, alt: user.name)
   end
 
   def get_friendship(friend_id)
