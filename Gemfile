@@ -19,13 +19,10 @@ gem 'bootstrap'
 gem 'jquery-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
-# gem for testing controllers
-gem 'rails-controller-testing'
 
 gem 'pg'
 gem 'rails_12factor', group: :production
+# gem 'fog', group: :production
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -38,17 +35,13 @@ gem 'rubocop-performance'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 
-gem 'bootstrap-will_paginate'
 gem 'carrierwave'
 gem 'faker'
-gem 'will_paginate'
+# gem 'bootstrap-will_paginate'
+# gem 'will_paginate'
 
-gem 'mini_magick'
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'mini_magick'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap'
@@ -80,6 +73,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'guard'
   gem 'guard-rspec'
+  # Controller testing
+  # gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
