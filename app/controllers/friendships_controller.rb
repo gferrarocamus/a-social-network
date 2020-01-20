@@ -16,7 +16,7 @@ class FriendshipsController < ApplicationController
     return unless (friendship = Friendship.find_by(id: params[:id]))
 
     flash[:notice] = if friendship.destroy
-                       "You're not friends anymore!"
+                       "You're not friends anymore"
                      else
                        'Could not unfriend that person'
                      end

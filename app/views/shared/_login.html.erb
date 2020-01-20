@@ -1,0 +1,25 @@
+<div class="h-100 full-height">
+  <div class="nav-container login">
+    <div class="p-0 px-md-3">
+      <%= render "shared/navbar" %>
+    </div>
+  </div>
+
+  <div class="container-fluid white-background main">
+    <div class="row">
+      <div class="col-12 col-md-6 d-none d-md-block gray-background full-height-col">
+        <div class="d-flex d-flex-center h-100 w-100">
+          <%= image_tag "connection.svg", class: "img-fluid connect" %>
+        </div>
+      </div>
+      <div class="col-12 mx-auto col-md-5 login-form full-height-col">
+        <div class="d-block d-md-flex d-flex-center h-100 w-100 pb-md-5">
+          <div class="w-100">
+            <%= render "shared/flash" %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+</div>

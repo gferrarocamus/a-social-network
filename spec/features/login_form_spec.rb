@@ -9,7 +9,7 @@ RSpec.feature 'Login', type: :feature do
     visit '/login'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_button 'Log in'
+    click_button 'Log In'
     expect(page).to have_text('Signed in successfully.')
   end
 
@@ -17,14 +17,14 @@ RSpec.feature 'Login', type: :feature do
     visit '/login'
     fill_in 'Email', with: user.email
     fill_in 'Password', with: ''
-    click_button 'Log in'
+    click_button 'Log In'
     expect(page).to have_text('Invalid Email or password.')
   end
 
   scenario 'should take user back to login page after logout' do
     login_as(user)
     visit '/'
-    click_link 'Logout'
+    click_link 'Log Out'
     expect(page).to have_current_path(new_user_session_path)
   end
 end

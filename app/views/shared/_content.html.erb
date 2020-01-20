@@ -1,0 +1,15 @@
+<div class="nav-container">
+  <div class="container">
+    <%= render "shared/navbar" %>
+  </div>
+</div> 
+
+<div class="container main">
+  <div class="row">
+    <div class="col-12 mx-auto col-md-10 col-lg-8 py-5 p-lg-5 white-background full-height-col">
+      <%= render "shared/flash" %>
+      
+      <%= yield %>
+    </div>
+  </div>  
+</div>

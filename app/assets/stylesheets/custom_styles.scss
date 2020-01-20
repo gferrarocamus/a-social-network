@@ -1,48 +1,89 @@
+html,
+body {
+  color: $jet;
+}
+
+.main a {
+  color: $light-blue;
+}
+
+.main a:hover {
+  text-decoration: none;
+  color: $blue;
+}
+
+.white-background {
+  background: $white;
+}
+
+.silver-background {
+  background: $silver;
+}
+
 .gray-background {
-  background: $background-gray;
+  background: $platinum;
 }
 
 .centered {
   margin: 0 auto;
 }
 
+.semi-bold {
+  font-weight: 500;
+}
+
 .bold {
-  font-weight: 900;
+  font-weight: 700;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.p-absolute {
+  position: absolute;
 }
 
 .button {
-  min-width: 100px;
+  min-width: 200px;
+}
+
+.button.btn-sm {
+  min-width: 50px;
 }
 
 .gray-button {
-  background: $button-gray;
-  border: 1px solid darkgray;
+  background: $silver;
 }
 
 .gray-button:hover {
-  background: $gray-hover;
-  //#dddfe2;
+  background: $jet;
+  color: $white;
 }
 
 .blue-button {
-  background: $network-blue !important;
-  color: white !important;
+  background: $light-blue;
+  color: $white !important;
 }
 
 .blue-button:hover {
-  background: #9cb4d8 !important;
+  background: $blue;
 }
 
-.flash,
+.green-button {
+  background: $green;
+  color: $white !important;
+}
+
+.green-button:hover {
+  background: $teal-green;
+}
+
+.red-hover:hover {
+  background: $red;
+}
+
 #error_explanation {
-  margin-top: -($spacer * 1.5);
-  margin-bottom: 1rem;
-  padding: 10px;
-  color: white;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  background: rgba(190, 75, 73, 0.8);
-  border: solid 1px $alert-red;
 
   h2 {
     font-size: $font-size-base * 1.25;
@@ -50,13 +91,13 @@
 }
 
 .notice {
-  background: rgba(23, 162, 184, 0.8);
-  border: 1px solid $info;
+  background: $emerald;
+  border: 1px solid $mountain-meadow;
 }
 
 .success {
-  background: rgba(65, 167, 69, 0.8);
-  border: 1px solid $success;
+  background: $green;
+  border: 1px solid $teal-green;
 }
 
 .gravatar img {
@@ -64,12 +105,136 @@
 }
 
 .field {
-  margin-bottom: $spacer * .5;
+  margin-bottom: $spacer * 0.5;
 }
 
 .field .field_with_errors:first-child::after {
-  color: $alert-red;
-  display: inline-block;
-  content: "*";
+  color: $red;
+  content: '*';
   margin-left: 2px;
+}
+
+.registration {
+  padding: 0 50px;
+}
+
+.connect,
+.login-form {
+  padding: 50px;
+}
+
+.nav-container.login {
+  padding: 0 50px;
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+.full-height-col {
+  min-height: calc(100vh - 68px);
+}
+
+.d-flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.material-icons.like {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 2rem;
+  transform: scaleX(-1);
+  transition: all 300ms ease-in-out;
+}
+
+.material-icons.like.liked {
+  color: $green;
+  transform: scaleX(-1) scale(1.25);
+  padding-bottom: 0.5rem;
+}
+
+.material-icons.like:hover {
+  transform: scaleX(-1) scale(1.25) translateY(-5px);
+  // TODO animation
+}
+
+.material-icons.like.liked:hover {
+  color: $red;
+  transform: scale(-1.25) translateY(0px);
+  // TODO animation
+}
+
+.edit-gravatar{
+  border-radius: 50%;
+  transition: all 300ms ease-in-out;
+  
+  .icon {
+    z-index: -1;
+    color: $white;
+    background-color: $light-blue;
+    border-radius: 50%;
+    font-size: 32px;
+    height: 100px;
+    width: 100px;
+  }
+}
+
+.edit-gravatar:hover {
+  .icon {
+    z-index: 1;
+  }
+}
+
+#new_post {
+  position: relative;
+  z-index: 2;
+
+  textarea {
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+}
+
+#new-post-img {
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 0.85;
+  width: 85%;
+}
+
+@media (min-width: 992px) {
+  #feed-img {
+    width: 50%;
+  }
+
+  #new-post-img {
+    width: 75%;
+  }
+
+  #no-requests-img {
+    width: 95%;
+  }
+
+  #first-user-img {
+    width: 65%;
+  }
+
+  #no-data-img {
+    width: 45%;
+  }
+
+  #not-found-img {
+    width: 90%;
+  }
+
+  #under-construction-img {
+    width: 65%;
+  }
+}
+
+@media (max-height: 575.98px) {
+  #new-post-img {
+    display: none;
+  }
 }

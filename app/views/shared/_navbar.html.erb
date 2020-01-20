@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg px-0">
+  <div class="navbar-brand">
+    <%= link_to 'A Social Network', root_path %>
+  </div>        
+
+  <% if user_signed_in? %>
+    <button class="navbar-toggler px-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="material-icons">menu</i>
+    </button>
+  <% end %>
+  
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <div class="navbar-nav">
+      <% if user_signed_in? %>
+      <%= link_to "New Post <i class='material-icons'> add_box </i>".html_safe, new_post_path, class: 'border-pipe main-link d-flex align-items-center' %>
+      <%= link_to "Find Friends <i class='material-icons'> people_alt </i>".html_safe, users_path, class: 'border-pipe main-link d-flex align-items-center' %>
+      <%= link_to "Notifications <i class='material-icons'> person_add </i> <span class='badge badge-light ml-1'>#{ requests_count unless requests_count == 0 }</span>".html_safe, requests_path, class: "border-pipe main-link d-flex align-items-center" %>
+      <div class="dropdown align-items-center main-link">
+        <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= current_user.name %>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right right" aria-labelledby="navbarDropdownMenuLink">
+          <%= link_to "Profile <i class='material-icons'> account_circle </i>".html_safe, user_path(current_user), class: 'dropdown-item d-flex align-items-center' %>
+          <%= link_to "Log Out<i class='material-icons'> exit_to_app </i>".html_safe, destroy_user_session_path, method: :delete, class: 'dropdown-item d-flex align-items-center' %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</nav>

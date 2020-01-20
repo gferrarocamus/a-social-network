@@ -1,24 +1,78 @@
-@import "vars";
-
 .nav-container {
-  background: $network-blue;
-  color: white;
+  background: $light-blue;
+  color: $white;
+
+  .navbar-brand {
+    font-size: 28px;
+  }
+
+  .navbar-toggler .material-icons {
+    font-size: 28px;
+  }
+
+  .navbar-nav .material-icons {
+    font-size: 16px;
+    margin-left: 5px;
+  }
 
   a,
   .material-icons {
-    color: white;
+    color: $white;
   }
 
-  a:hover {
-    color: rgba(255, 255, 255, 0.5);
+  a:hover,
+  a:hover .material-icons {
+    color: $periwinkle;
     text-decoration: none;
   }
 
-  .navbar-nav a {
-    margin-right: 15px;
+  .dropdown-menu {
+    background: $light-blue;
+
+    a:hover,
+    a:hover .material-icons {
+      color: $blue;
+      text-decoration: none;
+    }
   }
 
-  .navbar-nav a:last-child {
-    margin-right: 0px;
+  .navbar-nav a.main-link {
+    padding-right: 10px;
+  }
+
+  .main-link {
+    padding: 0.5rem 0px;
+  }
+
+  .navbar-nav a.dropdown-toggle {
+    padding-right: 0px;
+  }
+
+  @media (min-width: 992px) {
+    .border-pipe {
+      margin-right: 10px;
+      border-right: solid 2px rgba(255, 255, 255, 0.1);
+    }
+
+    .main-link {
+      padding: 0rem 0px;
+    }
+    
+    .nav-item.dropdown {
+      display: flex;
+    }
+
+    .dropdown-toggle {
+      margin-bottom: 1rem;
+    }
+
+    .dropdown-menu {
+      margin-top: 20px;
+    }
+
+    .dropdown-item {
+      justify-content: flex-end;
+    }
+
   }
 }

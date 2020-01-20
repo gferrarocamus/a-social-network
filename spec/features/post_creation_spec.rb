@@ -10,15 +10,15 @@ RSpec.feature 'Post creation', type: :feature do
 
   scenario 'successful with correct data' do
     visit new_post_path
-    fill_in 'Content', with: 'New post'
+    fill_in 'post_content', with: 'New post'
     click_button 'Post'
-    expect(page).to have_text('Post created successfully.')
+    expect(page).to have_text('Post created successfully')
   end
 
   scenario 'unsuccessful without content' do
     visit new_post_path
-    fill_in 'Content', with: ''
+    fill_in 'post_content', with: ''
     click_button 'Post'
-    expect(page).to have_text('Content should not be empty.')
+    expect(page).to have_text('Content should not be empty')
   end
 end

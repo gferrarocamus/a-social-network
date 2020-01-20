@@ -28,4 +28,5 @@ Rails.application.routes.draw do
 
   get 'privacy_policy', to: 'static_pages#policy'
   get 'terms_of_service', to: 'static_pages#terms'
+  get '*path', controller: 'static_pages', action: 'not_found'
 end

@@ -1,21 +1,28 @@
-<% provide(:title, 'All users') %>
+<% provide(:title, 'All Users') %>
 
-<div class="bg-white p-4 rounded">
-  <h2>All users</h2>
-
-  <% @users.each do |user| %>
-    <div class="d-flex mt-5">
-      <div class="gravatar">
-        <%= gravatar_for(user, options = {size: 80}) %>
+<div class="bg-white">
+  <% if @users.count > 1 %>
+    <h2>All Users</h2>
+    <% @users.each do |user| %>
+      <div class="d-flex mt-5">
+        <div class="gravatar">
+          <%= gravatar_for(user, options = {size: 80}) %>
+        </div>
+        <div class="ml-4">
+          <h5><%= link_to user.name, user_path(user) %></h5>      
+          <% if user != current_user %>
+            <%= render partial: 'shared/user', locals: {user: user} %>
+          <% else %>
+            <%= link_to 'Go to profile', user_path(user), class: 'btn btn-sm button blue-button' %>
+          <% end %>
+        </div>
       </div>
-      <div class="ml-4">
-        <h5><%= link_to user.name, user_path(user) %></h5>      
-        <% if user != current_user %>
-          <%= render partial: 'shared/user', locals: {user: user} %>
-        <% else %>
-          <%= link_to 'View you profile', user_path(user), class: 'btn button gray-button' %>
-        <% end %>
-      </div>
+    <% end %>
+  <% else %>
+    <div class="text-center">
+      <%= image_tag "taking_selfie.svg", class: 'img-fluid px-3 py-5 p-md-5', id: 'first-user-img' %>
+      <h4>You're the first one here!</h4>
+      <%= link_to 'Go to Profile', user_path(current_user), class: 'btn button blue-button mt-2' %>
     </div>
   <% end %>
 </div>

@@ -1,12 +1,12 @@
 <% provide(:title, 'Sign Up') %>
-<% provide(:button_text, 'Sign up') %>
+<% provide(:button_text, 'Sign Up') %>
 
-<%= render "devise/shared/error_messages", resource: resource %>
+<div class="centered registration">
+  <%= render "users/shared/error_messages", resource: resource %>
   
-<div class="centered">
-  <h2>Sign up</h2>
+  <h2>Sign Up</h2>
 
   <%= render 'users/shared/registration_form' %>
 
-  <%= render "devise/shared/links" %>
+  <%= render "users/shared/links" %>
 </div>

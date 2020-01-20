@@ -1,8 +1,14 @@
 <% provide(:title, 'Notifications') %>
 
 <div class="rounded bg-white p-4">
-  <% if !@requests.empty? %>
-    <h2>Pending requests</h2>
+  <% if @requests.count.zero? %>
+    <div class="text-center">
+      <%= image_tag "social_update.svg", class: 'img-fluid px-1 py-5 p-md-5', id: 'no-requests-img' %>
+      <h4>You have no pending friend requests</h4>
+      <%= link_to "Find Friends", users_path, class: 'btn button blue-button mt-2' %>
+    </div>
+  <% else %>
+    <h2>Pending Requests</h2>
 
     <% @requests.each do |r| %>
       <div class="d-flex mt-5">
@@ -12,11 +18,8 @@
         <div class="ml-4">
           <h5><%= link_to r.sender.name, user_path(r.sender) %></h5>
           <%= render partial: 'shared/received_request_buttons', locals: {r: r} %>
-          
         </div>
       </div>
     <% end %>
-  <% else %>
-    <h4>No pending friend requests</h4>
   <% end %>
 </div>

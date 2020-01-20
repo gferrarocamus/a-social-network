@@ -1,21 +1,33 @@
 <% provide(:title, @user.name) %>
-
 <div class="d-flex align-items-center mb-4">
-  <div class="gravatar">
-    <%= gravatar_for @user %>
-  </div>
+  <%= link_to "https://en.gravatar.com/site/signup/", target: :_blank, class: 'p-relative edit-gravatar' do %>
+    <span class="p-absolute icon d-flex justify-content-center align-items-center">
+      <i class="material-icons pb-1"> open_in_new </i>
+    </span>
+    <div class="gravatar">
+      <%= gravatar_for @user %>
+    </div>
+  <% end %>
   <div class="ml-4">
     <h4><%= @user.name %></h4>
     <%= @user.email %>
     <% if @user == current_user %>
       <br>
-      <small><%= link_to 'Edit profile', edit_user_registration_path%></small>
+      <small><%= link_to 'Edit profile', edit_user_registration_path %></small>
     <% else %>
       <%= render partial: 'shared/user', locals: {user: @user} %>
     <% end %>
   </div>
 </div>
-  
-<% @posts.each do |post| %>
-  <%= render partial: 'shared/post', locals: {post: post} %>
+
+<% if @posts.count > 0 %>
+  <% @posts.each do |post| %>
+    <%= render partial: 'shared/post', locals: {post: post} %>
+  <% end %>
+<% elsif @user == current_user %>
+  <div class="text-center">
+    <%= image_tag "no_data.svg", class: 'img-fluid px-1 py-5 p-md-5', id: 'no-data-img' %>
+    <h4>You have no posts</h4>
+    <%= link_to "Share Something", new_post_path, class: 'btn button blue-button mt-2' %>
+  </div>
 <% end %>
