@@ -214,6 +214,14 @@ small .material-icons {
   }
 }
 
+.post {
+  margin-bottom: 1.5rem;
+}
+
+.post:last-child {
+  margin-bottom: 0rem;
+}
+
 #new_post {
   position: relative;
   z-index: 2;
