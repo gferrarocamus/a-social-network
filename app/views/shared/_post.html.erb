@@ -6,7 +6,7 @@
       </div>
       <div>
         <h4><%= link_to post.user.name, user_path(post.user) %></h4>
-        <small><%= l(post.created_at) %></small>
+        <small><%= l(post.created_at, format: :long) %></small>
       </div>
     </div>
 

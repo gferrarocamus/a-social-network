@@ -22,7 +22,9 @@
         <%= f.submit yield(:button_text), disabled: true, class: "btn button blue-button btn-block mt-3 mb-1" %>
         <small>
           You've used Facebook to sign in. 
-          <%= link_to "Go to Facebook<i class='material-icons'> open_in_new </i> to edit your details.".html_safe, "https://www.facebook.com/", target: :_blank %>
+          <%= link_to "Go to Facebook<i class='material-icons'> open_in_new </i> to edit your details,".html_safe, "https://www.facebook.com/", target: :_blank %>
+          or 
+          <%= link_to "contact support", "mailto:giuliana.ferraro.dev@gmail.com", target: :_blank %>.
         </small>
       </div>
     <% end %>
