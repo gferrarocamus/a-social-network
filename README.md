@@ -29,6 +29,12 @@ Next, migrate the database:
 $ rails db:migrate
 ```
 
+Run the test suite to verify that everything is working correctly:
+
+```
+$ bundle exec rspec
+```
+
 Finally, fire up a local server:
 
 ```
@@ -42,3 +48,5 @@ You can see it live [here](https://not-so-social-network.herokuapp.com/).
 ## License
 
 MIT © 2020 Giuliana Ferraro
+
+![A Social Network Demo](/wiki/a-social-network-demo.png)
