@@ -13,6 +13,11 @@ Based on my previous [building-facebook](https://github.com/gferrarocamus/buildi
 - Create text or image posts
 - See, like, and comment on your friends' posts
 
+## Future Features
+
+- Support profile picture upload
+- Make posts polymorphic for greater flexibility
+
 ## Install
 
 In order to run the site, you need to have
@@ -48,5 +53,7 @@ You can see it live [here](https://not-so-social-network.herokuapp.com/).
 ## License
 
 MIT © 2020 Giuliana Ferraro
+
+---
 
 ![A Social Network Demo](/wiki/a-social-network-demo.png)
