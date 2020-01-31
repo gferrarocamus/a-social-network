@@ -2,7 +2,7 @@
 
 This site is a social network in the style of Facebook, where users can sign up, friend other users, and share posts.
 
-Based on my previous [building-facebook](https://github.com/gferrarocamus/building-facebook) project, it is built with Ruby on Rails, using Devise and OmniAuth for authentication and RSpec for testing.
+Based on our previous [building-facebook](https://github.com/gferrarocamus/building-facebook) project, it is built with Ruby on Rails, using Devise and OmniAuth for authentication and RSpec for testing.
 
 ## Features
 
