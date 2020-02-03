@@ -52,7 +52,7 @@ You can see it live [here](https://not-so-social-network.herokuapp.com/).
 
 ## License
 
-MIT © 2020 Giuliana Ferraro
+MIT © 2020 [Giuliana Ferraro](https://www.giulianaferraro.com/) <[giuliana.ferraro.dev@gmail.com](mailto:giuliana.ferraro.dev@gmail.com)>
 
 ---
 
