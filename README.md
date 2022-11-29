@@ -48,7 +48,7 @@ $ rails server
 
 ## Live Version
 
-You can see it live [here](https://not-so-social-network.herokuapp.com/).
+You can see it live [here](https://a-social-network.up.railway.app/).
 
 ## License
 
