@@ -52,7 +52,7 @@ You can see it live [here](https://a-social-network.up.railway.app/).
 
 ## License
 
-MIT © 2020 [Giuliana Ferraro](https://www.giulianaferraro.com/) <[giuliana.ferraro.dev@gmail.com](mailto:giuliana.ferraro.dev@gmail.com)>
+MIT © 2020 [Giuliana Ferraro](https://www.giulianaferraro.com/)
 
 ---
 
